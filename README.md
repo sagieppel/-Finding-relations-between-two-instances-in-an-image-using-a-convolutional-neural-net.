@@ -4,7 +4,7 @@
 ![](Figure1.png)
 Figure 1) Predicting relationships between vessels. The net receives the image and masks of the two vessels and predicts the relationship. A 'linked' relationship means that there is a connection that allows liquid to pass between the two vessels, while 'inside' or 'contain' means that one vessel contains the other.
 
-See paper [Computer vision for liquid samples in hospitals and medical labs using hierarchical image segmentation]() for details.
+See paper [Computer vision for liquid samples in hospitals and medical labs using hierarchical image segmentation and relations prediction](https://arxiv.org/ftp/arxiv/papers/2105/2105.01456.pdf) for details.
 
 A trained and ready to run model can be download from [here](https://drive.google.com/file/d/1Zl_czgm4NRpz-JisYgvGLfZBnwX_vNAl/view?usp=sharing).
 
@@ -71,3 +71,4 @@ Figure 2:Predicting the relationships between two instance classes. The predicti
 
 ## Net architecture and training details
 The relationships between two vessels (Figure 1) were identified using modified neural nets for image classification (ResNet). The image and the masks of the two vessels were used as inputs to the net (Figure 2). The vessel masks were processed using a separate convolutional layer (a single layer for each mask), and the output feature maps were added (elementwise) to the feature map produced by the image after the first ResNet layer (Figure 2). The relationships were limited to three classes: 'inside', 'contain', and 'linked'. Each class was predicted independently in the form of two values, which after normalization using Softmax give the probability that the class exists or not. The 'inside' and 'contain' relations were interchangeable: replacing the order of the masks changed the prediction from 'inside' to 'contain', and vice versa (Figure 5). The training was carried out on each pair of vessels in each image. The choice of pairs for each training batch was made randomly with equal probability for each relationship class (to ensure class balance).
+For more details see this [https://arxiv.org/ftp/arxiv/papers/2105/2105.01456.pdf](https://arxiv.org/ftp/arxiv/papers/2105/2105.01456.pdf)
