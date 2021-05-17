@@ -17,9 +17,9 @@ For using the trained net for prediction, no specific hardware is needed, but th
 For training the net, an Nvidia GPU is needed (the net was trained on Titan XP 16GB)
 
 ## Software:
-This network was run with Python 3.7 [Anaconda](https://www.anaconda.com/download/) with  [Pytorch](https://pytorch.org/) and OpenCV package.
-
-
+This network was run with Python 3.7 [Anaconda](https://www.anaconda.com/download/) with  [Pytorch](https://pytorch.org/) and OpenCV package*.
+* Installing opencv for conda can usually be done using: "pip install opencv-python" or "conda install opencv"
+ 
 
 
 
