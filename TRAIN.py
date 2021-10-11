@@ -28,7 +28,7 @@ if os.path.exists(TrainedModelWeightDir+"/itr.npy"): InitStep=int(np.load(Traine
 #...............Other training paramters..............................................................................
 
 TrainLossTxtFile=TrainedModelWeightDir+"TrainLoss.txt" #Where train losses will be writen
-Weight_Decay=1e-4# Weight for the weight decay loss function
+Weight_Decay=1e-5# Weight for the weight decay loss function
 MAX_ITERATION = int(100000010) # Max  number of training iteration
 #---------------------Create and Initiate net and create optimizer------------------------------------------------------------------------------------
 Net=NetBuild.Net() # Create net and load pretrained
